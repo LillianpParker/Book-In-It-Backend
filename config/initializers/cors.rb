@@ -6,11 +6,8 @@
 # Read more: https://github.com/cyu/rack-cors
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
-  allow do
-    origins 'https://book-in-it.herokuapp.com/'
-
-    resource '*',
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+    allow do
+      origins '*'
+      resource '*', headers: :any, methods: [:get, :post, :patch, :put, :delete]
+    end
   end
-end
